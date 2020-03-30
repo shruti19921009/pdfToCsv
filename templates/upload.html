@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<title>File Load</title>
+<h2>Data Parsing</h2>
+<hr>
+<br>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<div align="center">
+				<label for="QueryVariable">Query Variable : </label> <input name="QueryParameter" type="text" class="form-control">
+				<br>
+				<br>
+				<label for="QueryYear">Query Year : </label> <input name="QueryYear" type="text" class="form-control">
+				<br>
+				<br>
+				<br>
+				<span class="upl" id="FileText">Please upload balance sheet </span> <input type="file" name="file" autocomplete="off" required>
+			</div>
+		</p>
+    </dl>
+	<div align="center">
+	    <p>
+			<input type="submit" value="Submit">
+		</p>
+	</div>
+</form>
+</html>

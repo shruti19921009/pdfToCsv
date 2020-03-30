@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<title>File Load</title>
+<h2>Data Parsing</h2>
+<hr>
+<br>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="post" action="/display" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<label>The value of {{ queryParam }} for the year {{ queryYear }} : {{ queryParamValue }}</label>
+		</p>
+    </dl>
+	<div align="center">
+	    <p>
+			<input type="Download" value="Download">
+		</p>
+	</div>
+</form>
+</html>
